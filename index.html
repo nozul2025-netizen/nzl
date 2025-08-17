@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>نُزُل العربية للخدمات العقارية</title>
+
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+<!-- Base styles from template (must exist in assets) -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/color-2.css" rel="stylesheet">
+<link href="assets/css/global.css" rel="stylesheet">
+<link href="assets/css/blog.css" rel="stylesheet">
+<link href="assets/css/elpath.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+
+<style>
+  :root{ --gold:#a08c7f; }
+
+  /* Local Almarai */
+  @font-face {
+      font-family: 'Almarai';
+      src: url('assets/fonts/Almarai-Regular.ttf') format('truetype'),
+           url('assets/fonts/Almarai-Regular.woff2') format('woff2'),
+           url('assets/fonts/Almarai-Regular.woff') format('woff');
+      font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+      font-family: 'Almarai';
+      src: url('assets/fonts/Almarai-Bold.ttf') format('truetype'),
+           url('assets/fonts/Almarai-Bold.woff2') format('woff2'),
+           url('assets/fonts/Almarai-Bold.woff') format('woff');
+      font-weight: 700; font-style: normal; font-display: swap;
+  }
+
+  body { direction: rtl; text-align: right; font-family: 'Almarai', sans-serif; }
+  .pull-left { float: right !important; }
+  .pull-right { float: left !important; }
+  .main-menu .navigation > li { float: right; }
+  .dropdown .megamenu .column ul { text-align: right; }
+  .sec-title, h1, h2, h3, h4, h5, h6, p, li, a, button, input, textarea { text-align: right; font-family:'Almarai',sans-serif; }
+  .btn-box .theme-btn { margin-left: 10px; margin-right: 0; }
+  .owl-carousel, .owl-carousel .owl-stage-outer { direction: ltr; }
+  .owl-carousel .owl-item { direction: rtl; }
+  ::placeholder { text-align: right; }
+
+  /* Gold theme overrides */
+  .green_color, .theme_color, .sec-title .icon-box img, .count-outer, .feature-block-two .icon-box,
+  .clients-section .sec-title h5, .footer-top .support-box span { color: var(--gold) !important; }
+  .green_bg, .btn-three, .scroll-top, .subscribe-section .outer-container, .header-top{
+    background: var(--gold) !important; border-color: var(--gold) !important;
+  }
+  .btn-three:hover{ filter: brightness(0.9); }
+  .btn-two{ border-color: var(--gold) !important; color: var(--gold) !important; }
+  .btn-two:hover{ background: var(--gold) !important; color:#fff !important; }
+  .feature-block-two .inner-box:hover{ box-shadow: 0 10px 25px rgba(160,140,127,.25); }
+  .project-discription li span.fw_sbold{ color:#222 !important; }
+
+  /* Menu active/hover gold */
+  .main-menu .navigation > li > a{ font-family:'Almarai', sans-serif !important; }
+  .main-menu .navigation > li.current > a,
+  .main-menu .navigation > li:hover > a,
+  .sticky-header .main-menu .navigation > li.current > a,
+  a:focus, a:active{ color: var(--gold) !important; outline: none; }
+
+  /* Top bar icons/links gold */
+  .header-top .info li i,
+  .header-top .info li a,
+  .header-top .social-links li a:hover,
+  .support-box .icon-box i{ color: var(--gold) !important; }
+
+  /* Funfacts section adjustments (عن نزل) */
+  .funfact-style-two .counter-block-two .inner-box{ text-align:center; }
+  .funfact-style-two .counter-block-two h5{ margin-top:8px; color:#fff; }
+
+  /* Services title spacing */
+  #services .sec-title{ margin-bottom: 25px; text-align:center; }
+  #services .sec-title h2{ font-size: 44px; }
+
+  /* Subscribe section specifics */
+  .subscribe-section .outer-container{ background: var(--gold) !important; }
+  .subscribe-section .form-group button{ background: transparent; color: var(--gold); }
+  .subscribe-section input[type="tel"]{ direction:ltr; text-align:left; }
+
+  /* Floating WhatsApp button */
+  .wa-float{position:fixed;z-index:9999;bottom:18px;right:18px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.25);}
+  .wa-float i{ font-size:28px; }
+  @media (max-width:576px){
+    .wa-float{position:fixed;z-index:9999;bottom:18px;right:18px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.25);}
+  }
+
+  /* Responsive banner headings */
+  @media (max-width: 992px){
+    .banner-section h1{ font-size:52px !important; line-height:1.2 !important; }
+  }
+  @media (max-width: 576px){
+    .banner-section h1{ font-size:42px !important; line-height:1.2 !important; }
+  }
+
+  /* Ensure project images fill container properly */
+  .featured-projects .image-box img{ width:100%; height:100%; object-fit:cover; object-position:center; max-height:540px; }
+  @media(max-width:991px){ .featured-projects .image-box img{ max-height:420px; } }
+
+  /* ========== Animations (vanilla, no external deps) ========== */
+  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in-view{ opacity:1; transform:none; }
+  .reveal-delay-1{ transition-delay:.15s; }
+  .reveal-delay-2{ transition-delay:.3s; }
+  .reveal-delay-3{ transition-delay:.45s; }
+  .reveal-left{ transform: translateX(24px); }
+  .reveal-right{ transform: translateX(-24px); }
+  /* Project hover overlay */
+  .project-block-one .image-box{ position:relative; overflow:hidden; border-radius:12px; }
+  .project-block-one .image-box::after{
+    content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.35));
+    opacity:.0; transition:opacity .35s ease;
+  }
+  .project-block-one .inner-box:hover .image-box::after{ opacity:1; }
+  .project-block-one .view-btn{
+    position:absolute; bottom:14px; right:14px; background: var(--gold); color:#fff;
+    padding:8px 12px; border-radius:999px; font-size:13px; opacity:0; transform: translateY(8px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .project-block-one .inner-box:hover .view-btn{ opacity:1; transform:none; }
+
+  /* ========== Slanted Section Dividers ========== */
+  .divider-top, .divider-bottom{ position:relative; }
+  .divider-top:before{
+    content:""; position:absolute; top:-60px; left:0; right:0; height:60px;
+    background:linear-gradient(to right, rgba(160,140,127,.08), rgba(160,140,127,.02));
+    transform:skewY(-2.2deg);
+  }
+  .divider-bottom:after{
+    content:""; position:absolute; bottom:-60px; left:0; right:0; height:60px;
+    background:linear-gradient(to right, rgba(160,140,127,.08), rgba(160,140,127,.02));
+    transform:skewY(2.2deg);
+  }
+
+  /* Mobile Call floating button + WA transitions */
+  .call-float{
+    position:fixed; z-index:9999; bottom:18px; right:86px;
+    width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:#111; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.25);
+    transition: transform .35s ease, opacity .35s ease; opacity:0; transform: translateY(120%);
+  }
+  .call-float i{ font-size:22px; }
+  @media (max-width:768px){ .call-float{ display:flex; } }
+  @media (min-width:769px){ .call-float{ display:none; } }
+  .wa-float{ transition: transform .35s ease, opacity .35s ease; }
+
+
+  
+  /* Larger logo for header to balance menu */
+  .main-header .logo img, .main-header .logo-box img, .sticky-header .logo img, .sticky-header .logo-box img { max-height: 72px !important; height:auto; width:auto; }
+  @media (max-width: 576px){
+    .main-header .logo img, .main-header .logo-box img, .sticky-header .logo img, .sticky-header .logo-box img { max-height: 72px !important; height:auto; width:auto; }
+  }
+
+  .main-header .logo img, .main-header .logo-box img, .sticky-header .logo img, .sticky-header .logo-box img { max-height: 72px !important; height:auto; width:auto; }
+  @media (max-width: 576px){
+    .main-header .logo img, .main-header .logo-box img, .sticky-header .logo img, .sticky-header .logo-box img { max-height: 72px !important; height:auto; width:auto; }
+  }
+
+
+  /* Full-bleed hero video background */
+  .banner-section.style-two{ position:relative; overflow:hidden; }
+  .banner-section .video-bg{ position:absolute; inset:0; z-index:1; }
+  .banner-section .hero-video{ width:100%; height:100%; object-fit:cover; object-position:center; }
+  .banner-section .content-box{ position:relative; z-index:2; }
+  .banner-section.style-two .slide-item{ min-height: 86vh; display:flex; align-items:center; }
+  /* Hide old image-layer if present */
+  .banner-section .image-layer-2{ display:none !important; }
+  /* Animate heading only (text motion) */
+  .banner-section h1{ animation: floatFade 1.2s ease both .15s; }
+  @keyframes floatFade{ from{ opacity:0; transform: translateY(14px) } to{ opacity:1; transform:none } }
+
+
+  /* Reduce top/bottom padding to let video fill */
+  .banner-section .slide-item{ padding-top: 100px; padding-bottom: 120px; }
+  @media (max-width: 576px){
+    .banner-section .slide-item{ padding-top: 80px; padding-bottom: 100px; }
+  }
+
+
+  /* Top bar contrast: make links/text white over gold background */
+  .header-top .info li, .header-top .info li a{ color:#ffffff !important; }
+  .header-top .info li i{ color:#ffffff !important; }
+
+
+  .project-section .image-box img{ width:100%; height:250px; object-fit:cover; object-position:center; }
+  @media (max-width:576px){ .project-section .image-box img{ height:200px; } }
+
+
+  .clients-logos-list{ display:flex; gap:28px; justify-content:center; align-items:center; flex-wrap:wrap; }
+  .clients-logos-list .clients-logo img{ max-height:88px; width:auto; opacity:.9; }
+
+
+  /* Final logo size override */
+  .main-header .logo img, .main-header .logo-box img, .sticky-header .logo img, .sticky-header .logo-box img { max-height: 72px !important; height:auto; width:auto; }
+
+
+  @media(max-width:576px){ .clients-logos-list .clients-logo img{ max-height:72px; } }
+</style>
+</head>
+
+<body>
+<!-- Google Tag (replace GA_MEASUREMENT_ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+<!-- Meta Pixel Code (replace META_PIXEL_ID) -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'META_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<div class="boxed_wrapper" id="home">
+
+  <!-- header -->
+  <header class="main-header header-style-two">
+    <div class="header-top">
+      <div class="large-container">
+        <div class="top-inner clearfix">
+          <div class="left-column pull-left">
+            <ul class="info clearfix">
+              <li><i class="fas fa-phone"></i>للإستفسار: <a href="tel:+966533940408" dir="ltr">05339 40408</a></li>
+              <li><i class="fas fa-envelope"></i>البريد: <a href="mailto:info@nzl.sa">info@nzl.sa</a></li>
+            </ul>
+          </div>
+          <div class="right-column pull-right">
+            <ul class="social-links clearfix">
+              <li><a href="https://www.tiktok.com/@nozul.ar" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a></li>
+              <li><a href="https://www.instagram.com/Nozul.ar" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.snapchat.com/@nozul.ar" target="_blank" rel="noopener"><i class="fab fa-snapchat-ghost"></i></a></li>
+              <li><a href="https://www.tiktok.com/@nozul.ar" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-lower">
+      <div class="large-container">
+        <div class="inner-container clearfix">
+          <div class="logo-box pull-left">
+            <figure class="logo"><a href="#home"><img src="assets/images/logo_nzl.png" alt="Nozul Logo"></a></figure>
+          </div>
+          <div class="menu-area clearfix pull-right">
+            <div class="mobile-nav-toggler"><i class="icon-bar"></i><i class="icon-bar"></i><i class="icon-bar"></i></div>
+            <nav class="main-menu navbar-expand-md navbar-light">
+              <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                <ul class="navigation clearfix">
+                  <li class="current"><a href="#home">الرئيسية</a></li>
+                  <li><a href="#about">عن نزل</a></li>
+                  <li><a href="#services">خدماتنا</a></li>
+                  <li><a href="#accreditations">اعتمادات</a></li>
+                  <li><a href="#contact">تواصل</a></li>
+                </ul>
+              </div>
+            </nav>
+            <ul class="nav-right clearfix pull-left">
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sticky-header">
+      <div class="large-container">
+        <div class="outer-box">
+          <div class="logo-box">
+            <figure class="logo"><a href="#home"><img src="assets/images/logo_nzl.png" alt="Nozul Logo"></a></figure>
+          </div>
+          <div class="menu-area clearfix"><nav class="main-menu clearfix"></nav></div>
+          <div class="nav-right">
+            <div class="support-box">
+              <div class="icon-box"><i class="far fa-phone"></i></div>
+              <span>خدمة العملاء</span>
+              <h3><a href="tel:+966533940408" dir="ltr">05339 40408</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="menu-backdrop"></div>
+    <div class="close-btn"><i class="fas fa-times"></i></div>
+    <nav class="menu-box">
+      <div class="nav-logo"><a href="#home"><img src="assets/images/logo_nzl.png" alt=""></a></div>
+      <div class="menu-outer"></div>
+      <div class="contact-info">
+        <h4>بيانات التواصل</h4>
+        <ul>
+          <li>المدينة المنورة، المملكة العربية السعودية</li>
+          <li><a href="tel:+966533940408" dir="ltr">05339 40408</a></li>
+          <li><a href="mailto:info@nzl.sa">info@nzl.sa</a></li>
+        </ul>
+      </div>
+      <div class="social-links">
+        <ul class="clearfix">
+          <li><a href="https://www.tiktok.com/@nozul.ar" target="_blank"><span class="fab fa-tiktok"></span></a></li>
+          <li><a href="https://www.instagram.com/Nozul.ar" target="_blank"><span class="fab fa-instagram"></span></a></li>
+          <li><a href="https://www.snapchat.com/@nozul.ar" target="_blank"><span class="fab fa-snapchat-ghost"></span></a></li>
+          <li><a href="https://www.tiktok.com/@nozul.ar" target="_blank"><span class="fab fa-tiktok"></span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- banner -->
+  <section class="banner-section reveal style-two p_relative bg-color-2">
+    <div class="pattern-layer p_absolute l_0 b_0" style="background-image: url(assets/images/shape/shape-4.png);"></div>
+    <div class="slide-item p_relative pt_120 pb_235">
+
+    <div class="video-bg p_absolute t_0 r_0 b_0 l_0">
+      <video class="hero-video" autoplay muted playsinline loop poster="assets/images/banner/banner-4.png">
+        <source src="assets/videos/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+
+        <div class="image-layer-2 p_absolute t_0 r_0" style="background-image: url(assets/images/banner/banner-4.png);"></div>
+        <div class="large-container">
+          <div class="content-box p_relative d_block z_5">
+            <h3 class="d_block fs_22 lh_30 color_white fw_light mb_10 pr_40">
+              <img src="assets/images/favicon-32x32.png" alt="" style="width:24px;height:24px;vertical-align:middle;"> نُزُل العربية للخدمات العقارية
+            </h3>
+            <h1 class="color_white d_block fs_68 lh_76 mb_45 fw_exbold">نُزُل... عنوانك للاستقرار والاستثمار</h1>
+            <p class="color_white mb_15" style="opacity:.9;">مرخّص: فال / إيجار — رقم الوساطة 1200017322 — إدارة الأملاك 2200000520</p>
+            <div class="btn-box clearfix">
+              <a href="#services" class="theme-btn btn-three">خدماتنا<i class="icon-3"></i></a>
+              <a href="#contact" class="theme-btn btn-two">تواصل معنا<i class="icon-3"></i></a>
+            </div>
+          </div>
+        </div>
+</div>
+</div>
+
+<section class="slogan-section p_relative pt_60 pb_60" style="background:#f6f4f2;">
+  <div class="large-container centred">
+    <h2 class="fs_36 lh_46 fw_exbold" style="color:#0b1a2b;">نُزُل العربية... حلول عقارية بمعايير عالية</h2>
+    <p class="mt_10 fs_16" style="color:#4a4a4a;">حلول عقارية متكاملة للأفراد والشركات والمستثمرين</p>
+  </div>
+</section>
+
+<!-- about (عن نزل) -->
+  <section class="funfact-style-two reveal reveal-delay-1 p_relative pt_100 pb_80" id="about">
+    <div class="pattern-layer p_absolute l_0 t_0" style="background-image: url(assets/images/shape/shape-5.png);"></div>
+    <div class="shape-layer p_absolute l_0 b_0 bg_white"></div>
+    <div class="large-container">
+      <div class="sec-title mb_50 centred">
+        <div class="icon-box p_relative d_block fs_14 lh_20 mb_15">
+          <img src="assets/images/favicon-32x32.png" alt="" style="width:24px;height:24px;vertical-align:middle;">
+        </div>
+        <h2 class="p_relative d_block fs_42 lh_50 fw_exbold color_white">عن نُزُل</h2>
+      </div>
+      <div class="row clearfix">
+        <div class="col-lg-6 col-md-12 col-sm-12 text-column">
+          <div class="text p_relative d_block pr_40">
+            <h4 class="color_white mb_10">الرؤية</h4>
+            <p class="color_white lh_30">
+              أن نكون الشريك العقاري الأول في المدينة المنورة والمملكة عبر حلول مبتكرة تعزز جودة الحياة وتحقق عوائد مجزية للمستثمرين.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 text-column">
+          <div class="text p_relative d_block pl_40">
+            <h4 class="color_white mb_10">الرسالة</h4>
+            <p class="color_white lh_30">
+              تقديم خدمات عقارية متكاملة باحترافية وشفافية تشمل التسويق والوساطة والاستثمار وإدارة الأملاك، مع الالتزام برضا العميل.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-xl-6 col-lg-12 col-md-12 offset-xl-6 funfact-column">
+          <div class="funfact-inner p_relative d_block mt_45 centred">
+            <div class="row clearfix">
+              <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                <div class="counter-block-two">
+                  <div class="inner-box p_relative d_block">
+                    <div class="count-outer count-box p_relative d_block fs_70 lh_70 fw_exbold mb_8">
+                      <span class="count-text" data-speed="1500" data-stop="200">0</span><span class="fw_sbold">+</span>
+                    </div>
+                    <h5 class="p_relative d_block fs_16 lh_20">مشروع تم تسويقه</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                <div class="counter-block-two">
+                  <div class="inner-box p_relative d_block">
+                    <div class="count-outer count-box p_relative d_block fs_70 lh_70 fw_exbold mb_8">
+                      <span class="count-text" data-speed="1500" data-stop="100">0</span><span class="fw_sbold">+</span>
+                    </div>
+                    <h5 class="p_relative d_block fs_16 lh_20">وحدة تحت إدارة الأملاك</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                <div class="counter-block-two">
+                  <div class="inner-box p_relative d_block">
+                    <div class="count-outer count-box p_relative d_block fs_70 lh_70 fw_exbold mb_8">
+                      <span class="count-text fw" data-speed="1500" data-stop="1000">0</span><span class="fw_sbold">+</span>
+                    </div>
+                    <h5 class="p_relative d_block fs_16 lh_20">عقد إيجار إلكتروني</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services -->
+  <section class="feature-style-two reveal reveal-delay-2 divider-top p_relative sec-pad" id="services">
+    <div class="large-container">
+      <div class="sec-title centred">
+        <div class="icon-box p_relative d_block fs_14 lh_20 mb_15">
+          <img src="assets/images/favicon-32x32.png" alt="" style="width:24px;height:24px;vertical-align:middle;">
+        </div>
+        <h2 class="p_relative d_block fs_50 lh_60 fw_exbold">خدماتنا</h2>
+      </div>
+      <div class="row clearfix">
+        <!-- six cards -->
+        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <div class="feature-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1200ms">
+            <div class="inner-box p_relative d_block bg_white b_shadow_6 pt_60 pr_45 pb_55 pl_45 tran_5">
+              <div class="shape p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+              <div class="icon-box p_relative d_block fs_100 lh_100 mb_25 tran_5"><i class="icon-14"></i></div>
+              <h3 class="d_block fs_22 lh_30 fw_exbold mb_15"><a href="#contact" class="d_iblock color_black hov_color">التسويق والوساطة العقارية</a></h3>
+              <p>تسويق المشاريع السكنية والتجارية وإتمام عمليات البيع والتأجير عبر حملات متكاملة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <div class="feature-block-two wow fadeInUp animated" data-wow-delay="150ms" data-wow-duration="1200ms">
+            <div class="inner-box p_relative d_block bg_white b_shadow_6 pt_60 pr_45 pb_55 pl_45 tran_5">
+              <div class="shape p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+              <div class="icon-box p_relative d_block fs_100 lh_100 mb_25 tran_5"><i class="icon-16"></i></div>
+              <h3 class="d_block fs_22 lh_30 fw_exbold mb_15"><a href="#contact" class="d_iblock color_black hov_color">إدارة الأملاك والعقود</a></h3>
+              <p>إدارة شاملة للأملاك والتحصيل والصيانة وإصدار عقود إيجار إلكترونية موثقة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <div class="feature-block-two wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1200ms">
+            <div class="inner-box p_relative d_block bg_white b_shadow_6 pt_60 pr_45 pb_55 pl_45 tran_5">
+              <div class="shape p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+              <div class="icon-box p_relative d_block fs_100 lh_100 mb_25 tran_5"><i class="icon-15"></i></div>
+              <h3 class="d_block fs_22 lh_30 fw_exbold mb_15"><a href="#contact" class="d_iblock color_black hov_color">الاستثمار والاستشارات</a></h3>
+              <p>تحليل فرص الاستثمار العقاري ودراسات جدوى تدعم قرارات المستثمرين.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <div class="feature-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1200ms">
+            <div class="inner-box p_relative d_block bg_white b_shadow_6 pt_60 pr_45 pb_55 pl_45 tran_5">
+              <div class="shape p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+              <div class="icon-box p_relative d_block fs_100 lh_100 mb_25 tran_5"><i class="fas fa-bullhorn"></i></div>
+              <h3 class="d_block fs_22 lh_30 fw_exbold mb_15"><a href="#contact" class="d_iblock color_black hov_color">إدارة الحملات الإعلانية</a></h3>
+              <p>تخطيط وتنفيذ الحملات الممولة وتقارير الأداء لرفع المبيعات.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <div class="feature-block-two wow fadeInUp animated" data-wow-delay="150ms" data-wow-duration="1200ms">
+            <div class="inner-box p_relative d_block bg_white b_shadow_6 pt_60 pr_45 pb_55 pl_45 tran_5">
+              <div class="shape p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+              <div class="icon-box p_relative d_block fs_100 lh_100 mb_25 tran_5"><i class="fas fa-chart-line"></i></div>
+              <h3 class="d_block fs_22 lh_30 fw_exbold mb_15"><a href="#contact" class="d_iblock color_black hov_color">دراسات جدوى وتقييم</a></h3>
+              <p>تحليل مالي وسوقي وتقييمات عقارية لدعم القرارات الاستثمارية بثقة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+          <div class="feature-block-two wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1200ms">
+            <div class="inner-box p_relative d_block bg_white b_shadow_6 pt_60 pr_45 pb_55 pl_45 tran_5">
+              <div class="shape p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+              <div class="icon-box p_relative d_block fs_100 lh_100 mb_25 tran_5"><i class="fas fa-file-signature"></i></div>
+              <h3 class="d_block fs_22 lh_30 fw_exbold mb_15"><a href="#contact" class="d_iblock color_black hov_color">توثيق العقود وإيجار</a></h3>
+              <p>إصدار وتوثيق العقود إلكترونيًا عبر المنصات المعتمدة ومتابعة الامتثال.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="project-section p_relative sec-pad centred bg-color-3" id="featured">
+  <div class="pattern-layer p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-7.png);"></div>
+  <div class="large-container">
+    <div class="sec-title mb_55">
+      <div class="icon-box p_relative d_block fs_14 lh_20 mb_25">
+        <img src="assets/images/favicon-32x32.png" alt="" style="width:24px;height:24px;vertical-align:middle;">
+      </div>
+      <span class="sub-title p_relative d_block fs_14 lh_25 mb_10">اكتشف أفضل عقارات نُزُل العربية</span>
+      <h2 class="p_relative d_block fs_50 lh_60 fw_exbold">أحدث الفرص المميزة</h2>
+    </div>
+    <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
+      <div class="project-block-one">
+        <div class="inner-box p_relative d_block">
+          <figure class="image-box p_relative d_block">
+            <a href="assets/images/project/aqar1.jpg" target="_blank" rel="noopener">
+              <img src="assets/images/project/aqar1.jpg" alt="أرض للبيع بحي الجمعة - قباء">
+            </a>
+            <h2 class="fs_100 lh_100 fw_light color_white p_absolute z_2 tran_5">01</h2>
+          </figure>
+          <div class="text p_relative d_block pt_25">
+            <h3 class="p_relative d_block fs_22 lh_30 fw_sbold">
+              <a href="assets/images/project/aqar1.jpg" target="_blank" class="p_relative d_iblock color_black">أرض للبيع بحي الجمعة - قباء</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="project-block-one">
+        <div class="inner-box p_relative d_block">
+          <figure class="image-box p_relative d_block">
+            <a href="assets/images/project/aqar2.jpg" target="_blank" rel="noopener">
+              <img src="assets/images/project/aqar2.jpg" alt="عمارة للبيع بحي البركة">
+            </a>
+            <h2 class="fs_100 lh_100 fw_light color_white p_absolute z_2 tran_5">02</h2>
+          </figure>
+          <div class="text p_relative d_block pt_25">
+            <h3 class="p_relative d_block fs_22 lh_30 fw_sbold">
+              <a href="assets/images/project/aqar2.jpg" target="_blank" class="p_relative d_iblock color_black">عمارة للبيع بحي البركة</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="project-block-one">
+        <div class="inner-box p_relative d_block">
+          <figure class="image-box p_relative d_block">
+            <a href="assets/images/project/aqar3.jpg" target="_blank" rel="noopener">
+              <img src="assets/images/project/aqar3.jpg" alt="للبيع أو الإيجار فيلا بحي طيبة">
+            </a>
+            <h2 class="fs_100 lh_100 fw_light color_white p_absolute z_2 tran_5">03</h2>
+          </figure>
+          <div class="text p_relative d_block pt_25">
+            <h3 class="p_relative d_block fs_22 lh_30 fw_sbold">
+              <a href="assets/images/project/aqar3.jpg" target="_blank" class="p_relative d_iblock color_black">للبيع أو الإيجار فيلا بحي طيبة</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- accreditations -->
+  <section class="clients-section reveal divider-bottom p_relative sec-pad centred" id="accreditations">
+    <div class="large-container">
+      <div class="sec-title mb_30">
+        <div class="icon-box p_relative d_block fs_14 lh_20 mb_15">
+          <img src="assets/images/favicon-32x32.png" alt="" style="width:24px;height:24px;vertical-align:middle;">
+        </div>
+        <h2 class="p_relative d_block fs_42 lh_52 mb_20 fw_exbold">اعتمادات وشهادات</h2>
+        <h5 class="d_block fs_18 lh_25 fw_bold">مرخص من الهيئة العامة للعقار</h5>
+      </div>
+      <ul class="clients-logos-list">
+        <li><figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-1.png" alt=""></a></figure></li>
+        <li><figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-2.png" alt=""></a></figure></li>
+        <li><figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-3.png" alt=""></a></figure></li>
+        
+        
+        
+      </ul>
+      <div class="more-text p_relative d_block mt_25">
+        <p>رخصة فال للوساطة والتسويق: 1200017322 — رخصة فال لإدارة الأملاك: 2200000520 — عضو شبكة إيجار: 74560205</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact (acts as footer) -->
+  <section class="contact-section reveal p_relative sec-pad bg-color-4" id="contact">
+    <div class="pattern-layer p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-9.png);"></div>
+    <div class="large-container">
+      <div class="row align-items-center clearfix">
+        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+          <div class="content-box p_relative d_block mr_90">
+            <div class="sec-title mb_40">
+              <div class="upper-text p_relative d_block pr_35 fs_16 mb_9 fw_light color_white">
+                <img src="assets/images/favicon-32x32.png" alt="" style="width:20px;height:20px;vertical-align:middle;">
+                <span>نخدم الأفراد والشركات والمستثمرين</span>
+              </div>
+              <h2 class="p_relative d_block fs_50 lh_60 fw_exbold color_white mb_25">تواصل معنا الآن</h2>
+              <p class="d_block color_white">
+                أرسل طلبك وسيتواصل فريق نُزُل العربية معك في أسرع فرصة.
+              </p>
+            </div>
+            <div class="form-inner">
+              <div class="p_relative d_block color_white mb_20">
+                <h4 class="mb_10" style="color:#fff">قنوات التواصل</h4>
+                <p class="mb_5">واتساب: <a href="https://wa.me/966533940408" dir="ltr">05 339 4040 8</a> — <a href="https://wa.me/966576779333" dir="ltr">057 677 9333</a></p>
+                <p class="mb_5">رقم التواصل: <a href="tel:+966533940408" dir="ltr">05339 40408</a></p>
+                <p class="mb_10">البريد الإلكتروني: <a href="mailto:info@nzl.sa">info@nzl.sa</a></p>
+                <div class="p_relative d_block mt_15"><img src="assets/images/qr.jpg" alt="QR - لمعرفة المزيد" style="max-width:160px;border-radius:8px;"></div>
+              </div>
+              <div class="p_relative d_block mt_25 color_white">
+                <hr style="opacity:.25;">
+                <div class="row clearfix mt_20">
+                  <div class="col-md-4 col-sm-12 mb_15">
+                    <h5 class="color_white mb_10">روابط سريعة</h5>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                      <li><a href="#about" class="color_white">عن نُزُل</a></li>
+                      <li><a href="#services" class="color_white">خدماتنا</a></li>
+                      <li><a href="#accreditations" class="color_white">اعتماداتنا</a></li>
+                      <li><a href="#contact" class="color_white">الدعم والتواصل</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-12 mb_15">
+                    <h5 class="color_white mb_10">العنوان</h5>
+                    <p class="mb_5">المدينة المنورة - الخالدية</p>
+                    <p class="mb_5">السعودية</p>
+                  </div>
+                  <div class="col-md-4 col-sm-12 mb_15">
+                    <h5 class="color_white mb_10">تابعنا</h5>
+                    <p class="mb_10">
+                      <a href="https://www.tiktok.com/@nozul.ar" target="_blank" class="color_white"><i class="fab fa-tiktok"></i></a>
+                      &nbsp;&nbsp;
+                      <a href="https://www.instagram.com/Nozul.ar" target="_blank" class="color_white"><i class="fab fa-instagram"></i></a>
+                      &nbsp;&nbsp;
+                      <a href="https://www.snapchat.com/@nozul.ar" target="_blank" class="color_white"><i class="fab fa-snapchat-ghost"></i></a>
+                      &nbsp;&nbsp;
+                      <a href="#" target="_blank" class="color_white"><i class="fab fa-tiktok"></i></a>
+                    </p>
+                    <p class="mb_0">© نُزُل العربية العقارية</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p_relative d_block mt_20" style="opacity:.85;">
+                <small class="color_white">نتعامل مع بياناتك بسرية تامة، وتُستخدم فقط لغرض التواصل حول الخدمات العقارية.</small>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+          <figure class="image-box p_relative d_block"><img src="assets/images/resource/contact-1.jpg" alt=""></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Scroll to top -->
+  <button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fal fa-long-arrow-up"></span>
+  </button>
+</div>
+
+<!-- vendor js -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/jquery.paroller.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
+
+<script>
+<script>
+// Contact form -> WhatsApp + events
+(function(){
+  var form = document.getElementById('contact-form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.querySelector('[name="username"]').value || '';
+    var phone = form.querySelector('[name="phone"]').value || '';
+    var city  = form.querySelector('[name="subject"]').value || '';
+    var msg   = form.querySelector('[name="message"]').value || '';
+    var base  = 'https://wa.me/966578400033?text=';
+    var text  = 'مرحبًا نُزُل، لدي استفسار.' + '\\n' +
+                'الاسم: ' + name + '\\n' +
+                'الجوال: ' + phone + '\\n' +
+                'المدينة/الحي: ' + city + '\\n' +
+                'الرسالة: ' + msg;
+    window.open(base + encodeURIComponent(text), '_blank');
+    try{ gtag('event','submit_contact_form'); }catch(e){}
+    try{ fbq('track','Contact'); }catch(e){}
+    var ok = document.createElement('div');
+    ok.textContent = 'تم إرسال طلبك عبر واتساب. شكرًا لك!';
+    ok.style.cssText = 'margin-top:10px;color:#fff;background:var(--gold);padding:10px 12px;border-radius:6px;';
+    form.parentNode.insertBefore(ok, form.nextSibling);
+    form.reset();
+  });
+})();
+</script>
+
+<script>
+// Event hooks
+(function(){
+  var w = document.querySelector('.wa-float');
+  if(w){
+    w.addEventListener('click', function(){
+      try{ gtag('event','click_whatsapp_float'); }catch(e){}
+      try{ fbq('trackCustom','ClickWhatsAppFloat'); }catch(e){}
+    });
+  }
+})();
+</script>
+
+<script>
+// Progressive WebP swapper: if webp exists, swap the src
+(function(){
+  var canWebP = (function() {
+    try { var c=document.createElement('canvas'); return !!(c.getContext && c.getContext('2d')) && c.toDataURL('image/webp').indexOf('data:image/webp')==0; }
+    catch(err){ return false; }
+  })();
+  if(!canWebP) return;
+  function trySwap(img){
+    var src = img.getAttribute('src'); if(!src) return;
+    var webp = src.replace(/\.(jpg|jpeg|png)$/i, '.webp'); if(webp===src) return;
+    var test = new Image();
+    test.onload = function(){ img.setAttribute('src', webp); };
+    test.src = webp;
+  }
+  document.querySelectorAll('img').forEach(trySwap);
+})();
+</script>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/966578400033?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D9%86%D9%8F%D8%B2%D9%84" target="_blank" aria-label="تواصل واتساب"><i class="fab fa-whatsapp"></i></a>
+
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in-view'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(ent){
+      if(ent.isIntersecting){ ent.target.classList.add('in-view'); io.unobserve(ent.target); }
+    });
+  }, {threshold: 0.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+(function(){
+  var sh = document.querySelector('.sticky-header');
+  var wa = document.querySelector('.wa-float');
+  var call = document.querySelector('.call-float');
+  function onScroll(){
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if(sh){ sh.style.boxShadow = y>20 ? '0 6px 22px rgba(0,0,0,.08)' : 'none'; }
+    if(wa){ wa.style.transform = y>280 ? 'translateY(0)' : 'translateY(120%)'; wa.style.opacity = y>280 ? '1' : '0'; }
+    if(call){ call.style.transform = y>280 ? 'translateY(0)' : 'translateY(120%)'; call.style.opacity = y>280 ? '1' : '0'; }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+<a class="call-float" href="tel:+966533940408" aria-label="اتصل الآن"><i class="fas fa-phone"></i></a>
+
+<div style="text-align:center; padding:15px; font-size:14px; background-color:#0b1a2b; color:#fff;">
+© 2025 نُزُل العربية للخدمات العقارية. جميع الحقوق محفوظة.
+</div>
+
+</body>
+</html>
